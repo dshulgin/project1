@@ -10,7 +10,7 @@ shinyServer(
       
       number = clusters[clusters$name == input$Area ,1]
       print(input$Area)
-      time = 17
+      time = 16
       mu_t = c(data[number,"cases"])
       c_t = c(data[number,"cases"])
       i = 1
