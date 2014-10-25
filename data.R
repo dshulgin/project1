@@ -1,11 +1,21 @@
 #preparing the dataset
-#X = rpois(10000, 12.4577)
 
-#dat <- data.frame( x=rep(1:51), y=result[1:50], gp=1 )
-#xyplot( y ~ x, dat, group=gp, type='b' )
-res <- read.xlsx("I:/диплом/carcinoma.xlsx", 2,colIndex=c(2,5,6)) # read the second sheet
-res2 <- read.xlsx("I:/диплом/carcinoma.xlsx", 1,colIndex=c(1,2)) # read the first sheet
-test.txt <- read.table("I:/диплом/carcinoma3.txt", header=T)
+count = 119
+wb = loadWorkbook("carcinoma.xlsx")
+data = readWorksheet(wb, sheet = 2)
+clusters = readWorksheet(wb, sheet = 1)
+
+
+#cleaning names
+i = 1
+while(i <= count){
+  clusters[i,2] =  gsub(" ","", clusters[i,2]  , fixed=TRUE)  
+  
+  i = i + 1
+}
 
  
 I = seq(119, 2023, by = 119)
+ 
+
+ 

@@ -1,5 +1,5 @@
 i = 1  
-result <- MaxSPRT(res[,3,],res[,2,],I)
-showLR(c(1:17),result[1:17])
+total <- MaxSPRT(c_t,mu_t)
+showLR(c(1:17),total[1:17])
 
 

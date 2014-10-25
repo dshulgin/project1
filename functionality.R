@@ -1,17 +1,19 @@
 #MaxSPRT algo
-MaxSPRT <- function(c,mu, I){
+MaxSPRT <- function(data, I){
   N = length(I)
   result <- rep(0,17)
   years <- seq(1,17,1)
-  z =  (mu[I[i]]/years[i] - c[I[i]]) + c[I[i]]*log(c[I[i]]/(mu[I[i]]/years[i]))
-  print (z )#
+  z =  data[I[i],"mu_t"]/years[i] - data[I[i],"c_t"] + 
+       data[I[i],"c_t"]*log(data[I[i],"c_t"]/(data[I[i],"mu_t"]/years[i]))
+ 
   result[i] <- z
   
   while(i < N){
     i = i + 1
-    z = z + (mu[I[i]]/years[i] - c[I[i]]) + c[I[i]]*log(c[I[i]]/(mu[I[i]]/years[i]))
+    z = z +  data[I[i],"mu_t"]/years[i] - data[I[i],"c_t"] + 
+             data[I[i],"c_t"]*log(data[I[i],"c_t"]/(data[I[i],"mu_t"]/years[i]))
     result[i] <- z  
-    print (result[i])#
+    print (result[i])
     
   }
   return(result)
