@@ -7,14 +7,13 @@ shinyUI(fluidPage(
   
   sidebarLayout(
     sidebarPanel(
+      img(src = "Belmap.png"),
+      br(),
+      br(),
+      br(),
       selectInput("Area", "Choose a needed district:",choices = clusters$name, selected = "Минск"),
-      br(),
-      br(),
-      br(),
-      img(src = "cat2.png"),
-      br(),
-      br(),
       br()
+  
      
          
                  ),
